@@ -1,0 +1,80 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'me.tatarka.retrolambda'
+
+// JitPack Maven
+apply plugin: 'com.github.dcendents.android-maven'
+// Your Group
+group = 'com.lvzhongyi'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.0"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 24
+        versionCode 5
+        versionName "0.9.6"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    //v4支持库
+    compile('com.android.support:support-v4:24+') {
+        exclude group: 'com.android.support', module: 'support-v4'
+    }
+    //v7兼容库
+    compile('com.android.support:appcompat-v7:24+') {
+        exclude group: 'com.android.support', module: 'appcompat-v7'
+    }
+
+    //butter knife
+    compile('com.jakewharton:butterknife:8.+') {
+        exclude group: 'com.jakewharton', module: 'butterknife'
+    }
+    //rxAndroid
+    compile('io.reactivex:rxandroid:1.+') {
+        exclude group: 'io.reactivex', module: 'rxandroid'
+    }
+    //retrofit2
+    compile('com.squareup.retrofit2:retrofit:2.+') {
+        exclude group: 'com.squareup.retrofit2', module: 'retrofit'
+    }
+    //rxbinding
+    compile('com.jakewharton.rxbinding:rxbinding:0.4.0'){
+        exclude group: 'com.jakewharton.rxbinding', module: 'rxbinding'
+    }
+    //rxjava适配器
+    compile('com.squareup.retrofit2:adapter-rxjava:2.+') {
+        exclude group: 'com.squareup.retrofit2', module: 'adapter-rxjava'
+    }
+    //jackson转换器
+    compile('com.squareup.retrofit2:converter-jackson:2.+') {
+        exclude group: 'com.squareup.retrofit2', module: 'converter-jackson'
+    }
+    //日志拦截器
+    compile('com.squareup.okhttp3:logging-interceptor:3.+') {
+        exclude group: 'com.squareup.okhttp3', module: 'logging-interceptor'
+    }
+    //bugly
+    compile('com.tencent.bugly:crashreport:latest.release') {
+        exclude group: 'com.tencent.bugly', module: 'crashreport'
+    }
+    compile('com.tencent.bugly:nativecrashreport:latest.release') {
+        exclude group: 'com.tencent.bugly', module: 'nativecrashreport'
+    }
+}

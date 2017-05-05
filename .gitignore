@@ -1,0 +1,9 @@
+#gradle/
+.gradle/
+.idea/
+*/build/
+build/
+*/*.apk
+*.iml
+#gradlew
+#gradlew.bat
