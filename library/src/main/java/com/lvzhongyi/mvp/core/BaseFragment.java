@@ -126,7 +126,7 @@ public abstract class BaseFragment<V extends IBaseV, P extends BasePresenter> ex
      */
     @Override
     public AppCompatActivity getAppCompatActivity() {
-        return mListener.getAppCompatActivity();
+        return null;
     }
 
     public interface OnBaseFragmentInteractionListener extends IBaseV {

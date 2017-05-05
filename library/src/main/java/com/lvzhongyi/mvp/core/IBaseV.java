@@ -16,7 +16,7 @@ import android.support.v7.app.AppCompatActivity;
 public interface IBaseV {
     Context getContext();
 
-    Context getAppCompatActivity();
+    AppCompatActivity getAppCompatActivity();
 
     void toActivityFinish(Class<?> target);
 
